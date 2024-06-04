@@ -11,28 +11,41 @@ module.exports = {
   theme: {
     fontFamily: {
       'space-mono': ['Space Mono','systeme ui'],
-      'work-sans': ['Work-Sans','systeme ui'],
-     
+       'work-sans': ['Work-Sans','systeme ui'],
     },
-    fontWeight: {
-      bold: '700',
-      semibold: '600',
-      normal: '400',
+    borderRadius: {
+     'primary' : "20px",
     },
+    
     fontSize: {
-      sm: '0.8rem',
-      base: '1rem',
-      xl: '1.25rem',
-      '2xl': '1.563rem',
-      '3xl': '1.953rem',
-      '4xl': '2.441rem',
-      '5xl': '3.052rem',
-      'h1' : '67px',
-      'h2' : '51px',
-      'h3' : '38px',
-      'h4' : '28px',
-      'base' : '16px',
-      'caption':'12px',
+      'h1': ['67px', {
+        lineHeight: '73.7px',
+        fontWeight: '600',
+      }],
+      'h2': ['51px', {
+        lineHeight: '56.1px',
+        fontWeight: '600',
+      }],
+      'h3': ['38px', {
+        lineHeight: '45.6px',
+        fontWeight: '600',
+      }],
+      'h4': ['28px', {
+        lineHeight: '39.2px',
+        fontWeight: '600',
+      }],
+      'h5': ['22px', {
+        lineHeight: '30.8px',
+        fontWeight: '600',
+      }],
+      'base': ['16px', {
+        lineHeight: '22.4px',
+        fontWeight: '400',
+      }],
+      'caption': ['12px', {
+        lineHeight: '13.2px',
+        fontWeight: '400',
+      }],
     },
     extend: {
       colors: {
@@ -42,14 +55,12 @@ module.exports = {
         'cta': '#A259FF',
         'gradient1': "",
         'gradient2': "",
+        'white' : "#FFFFFF"
       },
-      lineHeight: {
-        'extra': '73.5px',
-        'large': '45.5px',
-        'medium': '39.5',
-        'small' : '35.5',
-        'big-small':'22.4'
-      }
+      backgroundImage: theme => ({
+        'gradient1': 'linear-gradient(100.92deg, #A259FF 13.57%, #FF6250 97.65%)',
+        'gradient2': 'linear-gradient(128.15deg, #A259FF 49.75%, #377DF7 136.56%)',
+      }),
     },
   },
   plugins: [],
