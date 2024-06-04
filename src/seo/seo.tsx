@@ -1,4 +1,5 @@
 import Head from "next/head"
+
 interface Props {
     children : React.ReactNode;
     title : string;
@@ -8,14 +9,14 @@ interface Props {
 
 const seo = ({
     children,
-    title = "Acceuil",
-    description = "Page d'acceuil"
+    title = "",
+    description = ""
 }:Props) => {
   return (
     <Head>
        <link rel="icon" type="image/svg+xml" href="/Storefront.svg" />
         <title>{title}</title>
-        {description &&   <meta name={description} content={description} />}
+        {description &&<meta name={description} content={description} />}
     </Head>
   )
 }
