@@ -16,37 +16,7 @@ module.exports = {
     borderRadius: {
      'primary' : "20px",
     },
-    
-    fontSize: {
-      'h1': ['67px', {
-        lineHeight: '73.7px',
-        fontWeight: '600',
-      }],
-      'h2': ['51px', {
-        lineHeight: '56.1px',
-        fontWeight: '600',
-      }],
-      'h3': ['38px', {
-        lineHeight: '45.6px',
-        fontWeight: '600',
-      }],
-      'h4': ['28px', {
-        lineHeight: '39.2px',
-        fontWeight: '600',
-      }],
-      'h5': ['22px', {
-        lineHeight: '30.8px',
-        fontWeight: '600',
-      }],
-      'base': ['16px', {
-        lineHeight: '22.4px',
-        fontWeight: '400',
-      }],
-      'caption': ['12px', {
-        lineHeight: '13.2px',
-        fontWeight: '400',
-      }],
-    },
+
     extend: {
       colors: {
         'background': '#2B2B2B',

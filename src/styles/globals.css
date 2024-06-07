@@ -4,9 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    @apply bg-background
+}
 
-
-
+a:hover {
+    @apply text-cta transition-all duration-500 ;
+}
+a{
+    @apply text-2xl;
+}
 
 
 

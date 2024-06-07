@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 interface Props {
   children : React.ReactNode;
-  variant?  : "h1"| "h2"| "h3"| "h4"|"h5"| "base"| "caption"| string;
+  variant?  : "h1"| "h2"| "h3"| "h4"|"h5"| "base"|"body"| "caption";
   component?: "h1"| "h2"| "h3"| "h4"|"h5"|"span"|"div"|"p";
   font ? : "spaceMono"|"workSans";
   theme ? : "background"|"background-secondary"|"caption-text"|"cta"|"gradient1"|"gradient2"|"white"
@@ -10,39 +10,54 @@ interface Props {
 
 }
 const Typography = ({
-    children,
-    variant = "h3",
-    theme = "white",
-    component:Component = 'div',
-    font = "workSans", 
-    className, }:Props) => {
+  children,
+  variant = "h3",
+  theme = "white",
+  component: Component = 'div',
+  font = "workSans",
+  className, }: Props) => {
+  let variantColors: string = "";
 
-     let variantStyles:string = "";
-     let variantColors:string = "";
+     const variantClasses = {
+       h1:{
+         'spaceMono': 'text-[28px] md:text-[38px] lg:text-[67px] font-bold leading-[73px]',
+         'workSans':  'text-[28px] md:text-[38px] lg:text-[67px] font-semibold leading-[73px]',
 
-      switch(variant){
-        case "h1" : 
-       variantStyles = "text-h1";
-        break;
-        case "h2" : 
-        variantStyles = "text-h2";
-        break;
-        case "h3" : 
-        variantStyles = "text-h3";
-        break;
-        case "h4" : 
-        variantStyles = "text-h4";
-        break;
-        case "h5" : 
-        variantStyles = "text-h5";
-        break;
-        case "base" : 
-        variantStyles = "text-base";
-        break;
-        case "caption" : 
-        variantStyles = "text-caption";
-        break;
-      }
+       },
+       h2:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[51px]  font-bold leading-[56px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[51px] font-semibold leading-[56px]',
+
+      } ,
+      h3:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[38px]  font-bold leading-[45px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[38px] font-semibold leading-[45px]',
+
+      } ,
+      h4:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[28px]  font-bold leading-[39px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[28px] font-semibold leading-[39px]',
+
+      } ,
+      h5:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[22px]  font-bold leading-[35px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[22px] font-semibold leading-[30px]',
+
+      } ,
+      body :{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[22px]  font-normal leading-[35px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[22px]  font-normal leading-[30px]',
+      },
+      base:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[16px] font-normal leading-[22px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[16px] font-normal leading-[22px]',
+
+      } ,
+      caption:{
+        'spaceMono': 'text-[28px] md:text-[38px] lg:text-[12px] font-normal leading-[13px]',
+        'workSans':  'text-[28px] md:text-[38px] lg:text-[12px] font-normal leading-[13px] ',
+      } ,
+     }
 
       switch (theme){
         case "background":
@@ -68,7 +83,7 @@ const Typography = ({
 
       }
   return (
-   <Component className={clsx(variantStyles,variantColors,className)}>
+   <Component className={clsx(variantClasses[variant][font],variantColors,className)}>
          {children} 
      </Component>
   )
